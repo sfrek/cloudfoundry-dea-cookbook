@@ -31,4 +31,6 @@ node[:cloudfoundry_dea][:runtimes].each do |k, runtime|
   include_recipe runtime[:cookbook]
 end
 
-cloudfoundry_component "dea"
+cloudfoundry_component "dea" do
+  upstart_file "upstart-chuid.conf.erb"
+end
