@@ -1,5 +1,15 @@
 include_attribute "cloudfoundry-common"
 
+# Where to install the CloudFoundry code.
+default['cloudfoundry_dea']['vcap']['install_path'] = "/srv/vcap-dea"
+
+# Repository to use when fetching the CloudFoundry code.
+default['cloudfoundry_dea']['vcap']['repo']         = "https://github.com/cloudfoundry/dea.git"
+
+# Git reference to use when fetching the CloudFoundry code. Can be
+# either a specific sha or a reference such as `HEAD` or `master`.
+default['cloudfoundry_dea']['vcap']['reference']    = "57eeebe521d9d53675c6a432b9091d47bea217ff"
+
 # Where to write the DEA's pid file.
 default[:cloudfoundry_dea][:pid_file] = File.join(node[:cloudfoundry_common][:pid_dir], "dea.pid")
 

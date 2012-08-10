@@ -21,6 +21,12 @@
   package pkg
 end
 
+cloudfoundry_common_source "dea" do
+  path          node['cloudfoundry_dea']['vcap']['install_path']
+  repository    node['cloudfoundry_dea']['vcap']['repo']
+  reference     node['cloudfoundry_dea']['vcap']['reference']
+end
+
 directory node[:cloudfoundry_dea][:base_dir] do
   recursive true
   owner node[:cloudfoundry_common][:user]
@@ -31,6 +37,11 @@ node[:cloudfoundry_dea][:runtimes].each do |k, runtime|
   include_recipe runtime[:cookbook]
 end
 
-cloudfoundry_component "dea" do
-  upstart_file "upstart-chuid.conf.erb"
+cloudfoundry_common_component "dea" do
+  install_path  node['cloudfoundry_dea']['vcap']['install_path']
+  pid_file      node['cloudfoundry_dea']['pid_file']
+  log_file      node['cloudfoundry_dea']['log_file']
+  upstart_file  "upstart-chuid.conf.erb"
+  action        [:create, :enable]
+  subscribes    :restart, resources("cloudfoundry-common_source" => "dea")
 end
