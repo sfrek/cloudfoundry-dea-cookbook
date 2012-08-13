@@ -41,7 +41,6 @@ cloudfoundry_common_component "dea" do
   install_path  node['cloudfoundry_dea']['vcap']['install_path']
   pid_file      node['cloudfoundry_dea']['pid_file']
   log_file      node['cloudfoundry_dea']['log_file']
-  upstart_file  "upstart-chuid.conf.erb"
   action        [:create, :enable]
   subscribes    :restart, resources("cloudfoundry-common_source" => "dea")
 end
