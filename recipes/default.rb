@@ -27,13 +27,13 @@ cloudfoundry_source "dea" do
   reference     node['cloudfoundry_dea']['vcap']['reference']
 end
 
-directory node[:cloudfoundry_dea][:base_dir] do
+directory node['cloudfoundry_dea']['base_dir'] do
   recursive true
   owner node['cloudfoundry']['user']
   mode  '0755'
 end
 
-node[:cloudfoundry_dea][:runtimes].each do |k, runtime|
+node['cloudfoundry_dea']['runtimes'].each do |k, runtime|
   include_recipe runtime[:cookbook]
 end
 
