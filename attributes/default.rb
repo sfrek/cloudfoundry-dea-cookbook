@@ -1,4 +1,4 @@
-include_attribute "cloudfoundry-common"
+include_attribute "cloudfoundry"
 
 # Where to install the CloudFoundry code.
 default['cloudfoundry_dea']['vcap']['install_path'] = "/srv/vcap-dea"
@@ -11,10 +11,10 @@ default['cloudfoundry_dea']['vcap']['repo']         = "https://github.com/cloudf
 default['cloudfoundry_dea']['vcap']['reference']    = "57eeebe521d9d53675c6a432b9091d47bea217ff"
 
 # Where to write the DEA's pid file.
-default[:cloudfoundry_dea][:pid_file] = File.join(node[:cloudfoundry_common][:pid_dir], "dea.pid")
+default[:cloudfoundry_dea][:pid_file] = File.join(node['cloudfoundry']['pid_dir'], "dea.pid")
 
 # Where to write the DEA's logs.
-default[:cloudfoundry_dea][:log_file] = File.join(node[:cloudfoundry_common][:log_dir], "dea.log")
+default[:cloudfoundry_dea][:log_file] = File.join(node['cloudfoundry']['log_dir'], "dea.log")
 
 # TODO (trotter): Find out what is stored here.
 default[:cloudfoundry_dea][:base_dir]    = "/var/vcap/data/dea"

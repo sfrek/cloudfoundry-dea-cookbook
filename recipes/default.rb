@@ -21,7 +21,7 @@
   package pkg
 end
 
-cloudfoundry_common_source "dea" do
+cloudfoundry_source "dea" do
   path          node['cloudfoundry_dea']['vcap']['install_path']
   repository    node['cloudfoundry_dea']['vcap']['repo']
   reference     node['cloudfoundry_dea']['vcap']['reference']
@@ -29,7 +29,7 @@ end
 
 directory node[:cloudfoundry_dea][:base_dir] do
   recursive true
-  owner node[:cloudfoundry_common][:user]
+  owner node['cloudfoundry']['user']
   mode  '0755'
 end
 
@@ -37,10 +37,10 @@ node[:cloudfoundry_dea][:runtimes].each do |k, runtime|
   include_recipe runtime[:cookbook]
 end
 
-cloudfoundry_common_component "dea" do
+cloudfoundry_component "dea" do
   install_path  node['cloudfoundry_dea']['vcap']['install_path']
   pid_file      node['cloudfoundry_dea']['pid_file']
   log_file      node['cloudfoundry_dea']['log_file']
   action        [:create, :enable]
-  subscribes    :restart, resources("cloudfoundry-common_source" => "dea")
+  subscribes    :restart, resources("cloudfoundry_source" => "dea")
 end

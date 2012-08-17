@@ -19,9 +19,9 @@ Cookbooks
 ---------
 
 Requires Opscode's bluepill cookbook for creating init scripts and
-trotter's cloudfoundry-common cookbook. Also requires the cookbooks for
+trotter's cloudfoundry cookbook. Also requires the cookbooks for
 any runtimes that you specify in the attributes. For the default runtime
-of ruby 1.9.2, the recipe in the cloudfoundry-common cookbook is used.
+of ruby 1.9.2, the recipe in the cloudfoundry cookbook is used.
 
 Usage
 =====
@@ -36,8 +36,8 @@ attributes by including the specified cookbooks. To use in your recipes:
 Attributes
 ==========
 
-* `cloudfoundry_dea[:pid_file]` - Where to write the DEA's pid file. Default is `File.join(node[:cloudfoundry_common][:pid_dir], "dea.pid")`.
-* `cloudfoundry_dea[:log_file]` - Where to write the DEA's logs. Default is `File.join(node[:cloudfoundry_common][:log_dir], "dea.log")`.
+* `cloudfoundry_dea[:pid_file]` - Where to write the DEA's pid file. Default is `File.join(node['cloudfoundry']['pid_dir'], "dea.pid")`.
+* `cloudfoundry_dea[:log_file]` - Where to write the DEA's logs. Default is `File.join(node['cloudfoundry']['log_dir'], "dea.log")`.
 * `cloudfoundry_dea[:runtimes]` - Array of hashes storing the `name`, `cookbook`, `executable`, `version`, and `version_flag` for each runtime supported by this DEA.  TODO (trotter): Make the runtime's cookbook contain most of this info Default is `[`.
 * `cloudfoundry_dea[:base_dir]` - TODO (trotter): Find out what is stored here. Default is `/var/vcap/data/dea"`.
 * `cloudfoundry_dea[:filter_port]` - TODO (trotter): Find out what this does. Default is `12345`.
