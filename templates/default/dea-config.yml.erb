@@ -40,6 +40,10 @@ pid: <%= node['cloudfoundry_dea']['pid_file'] %>
 #there is a shared directory containing the droplet.
 force_http_sharing: <%= node['cloudfoundry_dea']['force_http_sharing'] %>
 
+<% if node['cloudfoundry_dea']['index'] -%>
+index: <%= node['cloudfoundry_dea']['index'] %>
+<%- end %>
+
 # This is where the execution agent determines its available runtimes.
 # version flags are assumed to be '-v' unless noted below.
 
