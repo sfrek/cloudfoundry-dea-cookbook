@@ -44,6 +44,8 @@ force_http_sharing: <%= node['cloudfoundry_dea']['force_http_sharing'] %>
 index: <%= node['cloudfoundry_dea']['index'] %>
 <%- end %>
 
+detect_port_timeout: <%= node['cloudfoundry_dea']['detect_port_timeout'] %>
+
 # This is where the execution agent determines its available runtimes.
 # version flags are assumed to be '-v' unless noted below.
 
