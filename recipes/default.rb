@@ -17,6 +17,8 @@
 # limitations under the License.
 #
 
+include_recipe "cloudfoundry::default"
+
 %w{lsof psmisc librmagick-ruby}.each do |pkg|
   package pkg
 end
