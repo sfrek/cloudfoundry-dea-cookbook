@@ -48,3 +48,5 @@ default['cloudfoundry_dea']['force_http_sharing'] = true
 default['cloudfoundry_dea']['index'] = nil
 
 default['cloudfoundry_dea']['detect_port_timeout'] = 120
+
+default['cloudfoundry_dea']['runtimes'] = {}
