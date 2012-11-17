@@ -1,3 +1,5 @@
 cookbook "cloudfoundry-dea" do
+  configuration "default"
+  configuration "dea_with_ruby"
   runtimes []
 end

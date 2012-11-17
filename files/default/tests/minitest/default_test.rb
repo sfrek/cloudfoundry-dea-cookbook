@@ -41,11 +41,7 @@ describe 'cloudfoundry-dea::default' do
   it 'creates a config file with the expected runtime' do
     config = YAML.load_file('/etc/cloudfoundry/dea.yml')
     config["runtimes"].class.must_equal Hash
-    config["runtimes"].keys.must_equal ["ruby19"]
-  end
-
-  it 'runs the runtime-specific recipe' do
-    file("/tmp/dea-canary").must_exist
+    config["runtimes"].keys.must_equal ["canary"]
   end
 
   it 'creates a service init file' do

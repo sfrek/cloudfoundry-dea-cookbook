@@ -35,10 +35,6 @@ directory node['cloudfoundry_dea']['base_dir'] do
   mode  '0755'
 end
 
-node['cloudfoundry_dea']['runtimes'].each do |k, runtime|
-  include_recipe runtime[:cookbook]
-end
-
 cloudfoundry_component "dea" do
   install_path  node['cloudfoundry_dea']['vcap']['install_path']
   pid_file      node['cloudfoundry_dea']['pid_file']

@@ -19,11 +19,5 @@
 
 include_recipe "nats-server"
 
-node['cloudfoundry_dea']['vcap']['install_path']  = "/opt/test/dea"
-node['cloudfoundry_dea']['base_dir']              = "/var/test/dea"
-
-cloudfoundry_runtime "canary" do
-  version       "1.0"
-  executable    "/bin/false"
-  version_flag  "something"
-end
+include_recipe "cloudfoundry-ruby-runtime::ruby_1_9_2"
+include_recipe "cloudfoundry-dea::default"
