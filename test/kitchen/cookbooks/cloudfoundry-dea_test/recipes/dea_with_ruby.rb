@@ -17,7 +17,7 @@
 # limitations under the License.
 #
 
-include_recipe "nats-server"
+include_recipe "nats::server"
 
 include_recipe "cloudfoundry-ruby-runtime::ruby_1_9_2"
 include_recipe "cloudfoundry-dea::default"

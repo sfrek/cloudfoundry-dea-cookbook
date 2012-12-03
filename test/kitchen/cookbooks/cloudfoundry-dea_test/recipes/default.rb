@@ -17,7 +17,7 @@
 # limitations under the License.
 #
 
-include_recipe "nats-server"
+include_recipe "nats::server"
 
 node['cloudfoundry_dea']['vcap']['install_path']  = "/opt/test/dea"
 node['cloudfoundry_dea']['base_dir']              = "/var/test/dea"
