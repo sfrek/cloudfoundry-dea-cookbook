@@ -1,7 +1,9 @@
 Description
 ===========
 
-Installs and configures a CloudFoundry DEA
+Install the Cloud Foundry [DEA](https://github.com/cloudfoundry/dea)
+(Droplet Execution Agent), a mandatory component of a
+[Cloud Foundry](http://www.cloudfoundry.org) installation.
 
 Requirements
 ============
@@ -14,24 +16,12 @@ Platform
 Tested on:
 
 * Ubuntu 10.04
+* Ubuntu 12.04
 
 Cookbooks
 ---------
 
-Requires Opscode's bluepill cookbook for creating init scripts and
-trotter's cloudfoundry cookbook. Also requires the cookbooks for
-any runtimes that you specify in the attributes. For the default runtime
-of ruby 1.9.2, the recipe in the cloudfoundry cookbook is used.
-
-Usage
-=====
-
-This recipe will install the CloudFoundry DEA on the target node along
-with the necessary configuration files and init scripts to run it. In
-addition, it will install any necessary runtimes specified in its
-attributes by including the specified cookbooks. To use in your recipes:
-
-    include_recipe "cloudfoundry-dea"
+* cloudfoundry
 
 Attributes
 ==========
@@ -49,13 +39,23 @@ Attributes
 * `cloudfoundry_dea[:enforce_ulimit]` - TODO (trotter): Find out what this does. Default is `false`.
 * `cloudfoundry_dea[:force_http_sharing]` - Force the DEA to download applications over http, even when it's possible to access them via a shared directory. Default is `true`.
 
+Usage
+=====
+
+The default recipe will install the CloudFoundry DEA on the target node along
+with the necessary configuration files and init scripts to run it. Simply add
+it to your run list:
+
+    run_list "recipe[cloudfoundry-dea]"
 
 License and Author
 ==================
 
-Author:: Trotter Cashion (<cashion@gmail.com>)
+* Author:: Andrea Campi (<andrea.campi@zephirworks.com>)
+* Author:: Trotter Cashion (<cashion@gmail.com>)
 
-Copyright:: 2012 Trotter Cashion
+* Copyright:: 2012 ZephirWorks
+* Copyright:: 2012 Trotter Cashion
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
