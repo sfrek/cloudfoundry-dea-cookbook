@@ -16,10 +16,6 @@ index: <%= node['cloudfoundry_dea']['index'] %>
 intervals:
   heartbeat: <%= node['cloudfoundry_dea']['heartbeat'] %>
 
-#Force droplets to be downloaded over http even when
-#there is a shared directory containing the droplet.
-force_http_sharing: <%= node['cloudfoundry_dea']['force_http_sharing'] %>
-
 detect_port_timeout: <%= node['cloudfoundry_dea']['detect_port_timeout'] %>
 
 # This is where the execution agent determines its available runtimes.

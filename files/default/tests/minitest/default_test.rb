@@ -30,7 +30,6 @@ describe 'cloudfoundry-dea::default' do
       "secure"              => false,
       "multi_tenant"        => true,
       "pid"                 => "/var/run/cloudfoundry/dea.pid",
-      "force_http_sharing"  => true,
       "detect_port_timeout" => 120
     }.each do |k,v|
       config[k].must_equal v
