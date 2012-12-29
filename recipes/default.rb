@@ -18,6 +18,9 @@
 # limitations under the License.
 #
 
+default['cloudfoundry_dea']['pid_file'] = File.join(node['cloudfoundry']['pid_dir'], "dea.pid")
+default['cloudfoundry_dea']['log_file'] = File.join(node['cloudfoundry']['log_dir'], "dea.log")
+
 include_recipe "cloudfoundry::default"
 
 %w{lsof psmisc librmagick-ruby}.each do |pkg|
