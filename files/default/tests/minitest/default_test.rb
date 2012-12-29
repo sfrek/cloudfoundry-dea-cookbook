@@ -29,7 +29,6 @@ describe 'cloudfoundry-dea::default' do
       "max_memory"          => 4096,
       "secure"              => false,
       "multi_tenant"        => true,
-      "enforce_ulimit"      => false,
       "pid"                 => "/var/run/cloudfoundry/dea.pid",
       "force_http_sharing"  => true,
       "detect_port_timeout" => 120

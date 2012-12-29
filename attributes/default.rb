@@ -50,9 +50,6 @@ default['cloudfoundry_dea']['secure_env']  = false
 # Allow the DEA to manage more than one application.
 default['cloudfoundry_dea']['multi_tenant'] = true
 
-# TODO (trotter): Find out what this does.
-default['cloudfoundry_dea']['enforce_ulimit'] = false
-
 # Force the DEA to download applications over http, even when it's
 # possible to access them via a shared directory.
 default['cloudfoundry_dea']['force_http_sharing'] = true

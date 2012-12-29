@@ -16,9 +16,6 @@ index: <%= node['cloudfoundry_dea']['index'] %>
 intervals:
   heartbeat: <%= node['cloudfoundry_dea']['heartbeat'] %>
 
-# Provide ulimit based resource isolation in a multi tenant setup.
-enforce_ulimit: <%= node['cloudfoundry_dea']['enforce_ulimit'] %>
-
 #Force droplets to be downloaded over http even when
 #there is a shared directory containing the droplet.
 force_http_sharing: <%= node['cloudfoundry_dea']['force_http_sharing'] %>

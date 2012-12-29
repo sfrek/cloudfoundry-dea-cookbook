@@ -36,7 +36,6 @@ Attributes
 * `cloudfoundry_dea[:max_memory]` - The maximum amount of memory this DEA is allowed to allocate across all its applications. Default is `4096`.
 * `cloudfoundry_dea[:secure_env]` - TODO (trotter): Find out what this does. Default is `false`.
 * `cloudfoundry_dea[:multi_tenant]` - Allow the DEA to manage more than one application. Default is `true`.
-* `cloudfoundry_dea[:enforce_ulimit]` - TODO (trotter): Find out what this does. Default is `false`.
 * `cloudfoundry_dea[:force_http_sharing]` - Force the DEA to download applications over http, even when it's possible to access them via a shared directory. Default is `true`.
 
 Usage
