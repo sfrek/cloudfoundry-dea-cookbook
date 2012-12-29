@@ -24,7 +24,7 @@ describe 'cloudfoundry-dea::default' do
       "local_route"         => nil,
       "filer_port"          => 12345,
       "mbus"                => "nats://nats:nats@localhost:4222/",
-      "intervals"           => {"heartbeat" => 10},
+      "intervals"           => {"heartbeat" => 10, "advertise" => 5},
       "logging"             => {"level" => "info", "file" => "/var/log/cloudfoundry/dea.log"},
       "max_memory"          => 4096,
       "secure"              => false,

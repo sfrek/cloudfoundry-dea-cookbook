@@ -32,6 +32,8 @@ Attributes
 * `cloudfoundry_dea[:base_dir]` - TODO (trotter): Find out what is stored here. Default is `/var/vcap/data/dea"`.
 * `cloudfoundry_dea[:filter_port]` - TODO (trotter): Find out what this does. Default is `12345`.
 * `cloudfoundry_dea[:heartbeat]` - Interval (in seconds) between heartbeats sent to the Health Manager. Default is `10`.
+* `cloudfoundry_dea[:advertise]` - Interval (in seconds) for sending
+advertisments of available resources. Default is `5`.
 * `cloudfoundry_dea[:log_level]` - Log level for the DEA. Default is `info"`.
 * `cloudfoundry_dea[:max_memory]` - The maximum amount of memory this DEA is allowed to allocate across all its applications. Default is `4096`.
 * `cloudfoundry_dea[:secure_env]` - TODO (trotter): Find out what this does. Default is `false`.

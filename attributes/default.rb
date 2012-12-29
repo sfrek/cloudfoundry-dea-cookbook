@@ -37,6 +37,9 @@ default['cloudfoundry_dea']['filter_port'] = 12345
 # Interval (in seconds) between heartbeats sent to the Health Manager.
 default['cloudfoundry_dea']['heartbeat']   = 10
 
+# Interval (in seconds) for sending advertisments of available resources.
+default['cloudfoundry_dea']['advertise']   = 5
+
 # Log level for the DEA.
 default['cloudfoundry_dea']['log_level']   = "info"
 
