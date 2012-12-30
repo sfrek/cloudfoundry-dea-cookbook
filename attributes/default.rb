@@ -26,7 +26,7 @@ default['cloudfoundry_dea']['vcap']['repo']         = "https://github.com/cloudf
 
 # Git reference to use when fetching the CloudFoundry code. Can be
 # either a specific sha or a reference such as `HEAD` or `master`.
-default['cloudfoundry_dea']['vcap']['reference']    = "57eeebe521d9d53675c6a432b9091d47bea217ff"
+default['cloudfoundry_dea']['vcap']['reference']    = "0ad8c731844335440078c254a1db767dc0d357ae"
 
 # TODO (trotter): Find out what is stored here.
 default['cloudfoundry_dea']['base_dir']    = "/var/vcap/data/dea"

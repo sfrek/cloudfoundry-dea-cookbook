@@ -24,18 +24,5 @@ detect_port_timeout: <%= node['cloudfoundry_dea']['detect_port_timeout'] %>
 
 runtimes:
 <%- node['cloudfoundry']['runtimes'].each do |_, runtime| %>
-  <%= runtime[:name] %>:
-    executable: <%= runtime[:executable] %>
-    version: <%= runtime[:version] %>
-    version_flag: <%= runtime[:version_flag] %>
-    environment: <%= runtime[:environment] %>
-<%- if runtime[:debug_env] %>
-    debug_env:
-<%- runtime[:debug_env].each do |state, opts| %>
-      <%= state %>:
-<%- opts.each do |opt| %>
-        - <%= opt %>
-<%- end # opts.each%>
-<%- end # debug_env.each%>
-<%- end # if debug_env%>
-<%- end # runtimes.each%>
+  - <%= runtime[:name] %>
+<% end %>
