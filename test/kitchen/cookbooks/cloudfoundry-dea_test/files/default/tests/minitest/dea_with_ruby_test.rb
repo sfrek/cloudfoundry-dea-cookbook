@@ -11,7 +11,7 @@ describe 'cloudfoundry-dea::dea_with_ruby' do
 
   it 'creates a config file with the expected runtime' do
     config = YAML.load_file('/etc/cloudfoundry/dea.yml')
-    config["runtimes"].class.must_equal Hash
-    config["runtimes"].keys.must_equal ["ruby19"]
+    config["runtimes"].class.must_equal Array
+    config["runtimes"].must_equal ["ruby19"]
   end
 end

@@ -38,8 +38,8 @@ describe 'cloudfoundry-dea::default' do
 
   it 'creates a config file with the expected runtime' do
     config = YAML.load_file('/etc/cloudfoundry/dea.yml')
-    config["runtimes"].class.must_equal Hash
-    config["runtimes"].keys.must_equal ["canary"]
+    config["runtimes"].class.must_equal Array
+    config["runtimes"].must_equal ["canary"]
   end
 
   it 'creates a service init file' do
