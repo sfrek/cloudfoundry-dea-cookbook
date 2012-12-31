@@ -44,5 +44,5 @@ cloudfoundry_component "dea" do
   pid_file      node['cloudfoundry_dea']['pid_file']
   log_file      node['cloudfoundry_dea']['log_file']
   action        [:create, :enable]
-  subscribes    :restart, resources(:cloudfoundry_source => "dea")
+  subscribes    :restart, "cloudfoundry_source[dea]"
 end
