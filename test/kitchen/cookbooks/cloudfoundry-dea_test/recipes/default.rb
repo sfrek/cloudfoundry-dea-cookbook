@@ -24,6 +24,8 @@ node['cloudfoundry_dea']['base_dir']              = "/var/test/dea"
 
 cloudfoundry_runtime "canary" do
   version       "1.0"
+  description   "canary"
   executable    "/bin/false"
   version_flag  "something"
+  version_output "something else"
 end
